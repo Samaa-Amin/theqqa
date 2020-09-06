@@ -9,6 +9,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { CategoryNavComponent } from './category-nav/category-nav.component';
+import { userservice } from './services/userservice.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,9 +30,10 @@ import { CategoryNavComponent } from './category-nav/category-nav.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
 
   ],
-  providers: [],
+  providers: [userservice],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

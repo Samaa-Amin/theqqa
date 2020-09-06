@@ -22,11 +22,11 @@
             <input formControlName="email" placeholder="" class="col-12">
             <div class="errormsg">
                 <span class="" *ngIf="myForm.controls.email.hasError('pattern') && myForm.controls.email.touched">
-                    email must be "abc@abc.com"
+                   البريد الالكترونى يجب ان يكون مثل "abc@abc.com"
                 </span>
     
                 <span class="" *ngIf="myForm.controls.email.hasError('required') && myForm.controls.email.touched ">
-                    email is requeired
+                   البريد الالكترونى مطلوب
                 </span>
             </div>
             <!-- ====================password====================== -->
@@ -38,7 +38,7 @@
     
                 <span class="errormsg"
                     *ngIf="myForm.controls.password.hasError('required') && myForm.controls.password.touched ">
-                    password is requeired
+                    يجب ادخال كلمة السر
                 </span>
                 <span class="errormsg" *ngIf="myForm.controls.password.hasError('pattern')  && myForm.controls.password.touched ">
     
@@ -53,7 +53,7 @@
     
                 <span class="errormsg "
                     *ngIf="myForm.value.confirmPassword !== myForm.value.password && myForm.controls.confirmPassword.touched">
-                    test doesn't match
+                   كلمتا السر غير متطابقتان
                 </span>
             </div>
             <!-- ====================submit====================== -->
