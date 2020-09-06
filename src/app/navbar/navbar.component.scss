@@ -1,0 +1,202 @@
+
+nav{
+  background-color: white;
+}
+
+.mobileMenu {
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    transition: all ease 0.25s;
+    z-index: 9999;
+
+    &.onRight {
+      left: auto;
+      right: 0;
+      transform: translateX(100%);
+    }
+    &.open {
+      transform: translateX(0%);
+      z-index: 9999;
+    }
+
+    .navbar-nav {
+      overflow-y: auto;
+    
+    }
+  }
+
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    &.open {
+      display: block;
+      z-index: 3000;
+    }
+  }
+
+  form{
+    width: 60%;
+    input{
+      width: 90%;
+    }
+  }
+
+  // strat side menu
+  .card-body{
+    background-color: #202020;
+  }
+.collapse ul li {
+  color: #ddd;
+  text-align: end;
+  list-style: none;
+}
+
+.collapse-item {
+  min-width: 240px;
+  text-align: end;
+
+}
+.collapse-item {
+  padding: 10px;
+  border-bottom: 1px solid #202020;
+  button{
+    background: none;
+    border: none;
+    color: #ddd;
+    min-width: 220px;
+  }
+  a{
+    color: #ddd;
+    text-decoration: none;
+  }
+}
+.collapse-item button:focus{
+  outline:none;
+}
+
+i{
+  transition: all ease 0.5s; 
+    transform: rotate(0deg);
+  &.rotate-arrow{
+    transform: rotate(180deg);
+
+  }
+}
+// end side menu
+
+
+  // large screens
+  @media (min-width: 992px){
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
+  
+    .sign-up button{
+      margin-left: 15px;
+      border-left: 1px solid #ddd;
+      background-color: white;
+      z-index: 100;
+
+    }
+
+    .navbar-wrapper{
+      transition: all ease 0.5s; 
+      transform: translate(0,0);
+      &.scrolled{
+        transform: translate(0,-31px);
+      }
+    }
+  }
+// small screens
+  @media (max-width: 992px){
+    form,.cart-wrapper p{
+      display: none;
+    }
+    .formSm{
+      display: flex;
+      position: fixed;
+      top: 48px;
+      left: 0;
+      width: 100%;
+      padding: 11px;
+      background-color:#e5e8eb;
+     
+    }
+    .formSm::before{
+      content: "";
+    width: 12px;
+    height: 12px;
+    background-color: #e5e8eb;
+    font-weight: bold;
+    position: absolute;
+    top: -6px;
+    left: 47px;
+    transform: rotate(45deg);
+    }
+    .sign-up button{
+      color: #006fcc;
+      
+    }
+    .hello{
+      display: none;
+    }
+    .fa-shopping-cart ,.fa-search {
+      margin-right: 10px;
+    }
+   
+  }
+  .dropdown-toggle::before {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+    color: #888;
+  }
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+
+
+  .btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+.btn.focus, .btn:focus {
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+
+}
+
+
+  
+.dropdown-menu {
+  top: 95%;
+  left: 15px;
+  // border-top: none;
+  margin-top: 0;
+  border-radius: 0;
+  background-color: white;
+  z-index: 99;
+
+}
+  
+
+
+

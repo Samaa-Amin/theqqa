@@ -1,0 +1,116 @@
+
+<!-- start side menu -->
+<div class="collapse navbar-collapse bg-dark p-0 justify-content-lg-end  d-flex flex-column flex-lg-row flex-xl-row mobileMenu onRight"
+    id="navbarSupportedContent" [ngClass]="{'open' :MenuStatus}">
+    <div class="navbar-nav align-self-stretch d-flex flex-column  align-items-end">
+        <div class="collapse-item">
+            <a class="collapse-link" href="#">الصفحة الرئيسية <span class="sr-only">(current)</span></a>
+        </div>
+
+        <div class="collapse-item">
+            <a class="collapse-link" href="#">الصفحة الرئيسية <span class="sr-only">(current)</span></a>
+        </div>
+
+        <div class="">
+            <p class=" m-0 collapse-item">
+                <button class="d-flex justify-content-between" type="" data-toggle="collapse" data-target="#collapseExample"
+                    aria-expanded="false" aria-controls="collapseExample" (click)="collapseStatus()">
+                <i class="fas fa-angle-up" [ngClass]="{'rotate-arrow' :collapsOpen}"></i>
+                    أجهزة منزلية
+                </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body py-0">
+                    <ul class="m-0">
+                        <li class="my-2">أجهزة</li>
+                        <li class="my-2">أجهزة</li>
+                        <li class="my-2">أجهزة</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="">
+            <p class=" m-0 collapse-item">
+                <button class="d-flex justify-content-between" type="" data-toggle="collapse" data-target="#collapseExample-2"
+                    aria-expanded="false" aria-controls="collapseExample-2" (click)="collapseStatus()">
+                <i class="fas fa-angle-up" [ngClass]="{'rotate-arrow' :collapsOpen}"></i>
+                    أجهزة منزلية
+                </button>
+            </p>
+            <div class="collapse" id="collapseExample-2">
+                <div class="card card-body py-0">
+                    <ul class="m-0">
+                        <li class="my-2">أجهزة</li>
+                        <li class="my-2">أجهزة</li>
+                        <li class="my-2">أجهزة</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- end side menu -->
+
+
+
+<div class="navbar-wrapper fixed-top" [ngClass]="{'scrolled' :isScrolled}" [ngClass]="{'open' :MenuStatus}">
+    <app-upper-nav></app-upper-nav>
+    <nav class="navbar navbar-expand-lg navbar-light  justify-content-sm-start ">
+        <div class="container-fluid">
+            <!-- left section -->
+            <div class="d-flex cart-wrapper">
+                <div class="cart d-flex align-items-center justify-content-between">
+                    <p class="m-0">العربة</p>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-search d-lg-none" (click)="showSearchBar()"></i>
+
+                </div>
+                <div class="sign-up">
+                    <div class="btn-group">
+                        <button type="button" class="btn  dropdown-toggle mb-0" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <span class="hello">
+                                مرحبا
+                                .
+                            </span>
+                            دخول
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- middle section -->
+            <form class="form-inline my-2 my-lg-0 align-self-stretch .d-none .d-lg-block .d-xl-none flex-nowrap "
+                [ngClass]="{'formSm' :showSearch}">
+                <button class="btn btn-primary  my-sm-0" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search " />
+            </form>
+            <!-- right section -->
+            <div class="d-flex flex-nowrap brand">
+                <a class="navbar-brand  ml-lg-0 mr-2 ml-auto" href="#"></a>
+
+                <button class="navbar-toggler align-self-start" type="button" (click)=" toggleSideMenu()">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+        </div>
+
+    </nav>
+    <app-category-nav></app-category-nav>
+
+</div>
+
+<div class="overlay" [ngClass]="{'open' :MenuStatus}" (click)="removeSideMenu()"></div>

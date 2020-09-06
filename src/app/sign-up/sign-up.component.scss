@@ -1,0 +1,41 @@
+*{
+    direction: rtl;
+    
+}
+p{
+    text-align: initial;
+    font-size: 12px;
+
+}
+label{
+    text-align: initial;
+    font-weight: bold;
+}
+
+h1{
+    text-align: initial;
+    font-size: 25px;
+}
+form{
+    border: 1px solid #ddd;
+    padding: 30px;
+    .form-label{
+        width: 100%;
+    }
+}
+
+.errormsg {
+    color: #dd583f;
+    font-size: 14px;
+    text-transform: capitalize;
+    line-height: 1;
+    height: 17px;
+}
+
+.form-logo{
+    width: 150px;
+    margin: 0 auto;
+    img{
+        max-width: 100%;
+    }
+}

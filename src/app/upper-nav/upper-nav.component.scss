@@ -1,0 +1,30 @@
+*{
+    direction: rtl;
+}
+
+nav{
+    background-color: #232f3e;
+    ul{
+        list-style: none;
+        margin: 5px;
+        a,li{
+            color: #ddd;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+}
+
+.list-links li{
+    padding:0 12px;
+    position: relative;
+}
+.list-links li.line-afrter::after{
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 1px;
+    background-color: #666;
+    top:6px;
+    left: 0px;
+}

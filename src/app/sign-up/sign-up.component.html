@@ -1,0 +1,71 @@
+<section class="form-wrapper  d-flex  justify-content-around">
+    <div class="col-lg-4">
+
+        <div class="form-logo">
+            <img src="https://www.southcharlottefamilycounseling.com/wp-content/uploads/2015/10/cropped-logo-dummy.png" alt="">
+        </div>
+    
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="col-md-12 d-flex flex-column ">
+            <h1>أنشئ حساباً</h1>
+            <!-- ====================name====================== -->
+            <label for="name" class="d-block">اسمك</label>
+            <input formControlName="name" placeholder="" class="col-12">
+            <div class="errormsg">
+                <span class="" *ngIf="myForm.get('name').hasError('required')  && myForm.get('name').touched ">
+                    Oops, please provide a name!
+                </span>
+            </div>
+            <!-- ====================email====================== -->
+    
+            <label for="email" class="d-block">البريد الإلكتروني</label>
+    
+            <input formControlName="email" placeholder="" class="col-12">
+            <div class="errormsg">
+                <span class="" *ngIf="myForm.controls.email.hasError('pattern') && myForm.controls.email.touched">
+                    email must be "abc@abc.com"
+                </span>
+    
+                <span class="" *ngIf="myForm.controls.email.hasError('required') && myForm.controls.email.touched ">
+                    email is requeired
+                </span>
+            </div>
+            <!-- ====================password====================== -->
+            <label for="password" class="d-block">كلمة السر</label>
+    
+            <input formControlName="password" placeholder="" type="password" class="col-12">
+            <div class="errormsg">
+    
+    
+                <span class="errormsg"
+                    *ngIf="myForm.controls.password.hasError('required') && myForm.controls.password.touched ">
+                    password is requeired
+                </span>
+                <span class="errormsg" *ngIf="myForm.controls.password.hasError('pattern')  && myForm.controls.password.touched ">
+    
+                    password must be at least 5 charachters and contain at least upper char, low char, number
+                </span>
+            </div>
+            <!-- ====================confirmpassword====================== -->
+            <label for="confirmPassword" class="d-block">أعد كتابة كلمة السر</label>
+    
+            <input formControlName="confirmPassword" placeholder="" type="password" class="col-12">
+            <div class="errormsg">
+    
+                <span class="errormsg "
+                    *ngIf="myForm.value.confirmPassword !== myForm.value.password && myForm.controls.confirmPassword.touched">
+                    test doesn't match
+                </span>
+            </div>
+            <!-- ====================submit====================== -->
+            <p>بإنشاء حساب، فإنك توافق على شروط الاستخدام وخصوصية الاستخدام.</p>
+            <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary mb-2">
+                أنشئ حسابك
+            </button>
+            <p>
+                هل تمتلك حساباً بالفعل؟
+                <span><a routerLink="/logIn"> تسجيل الدخول <i class="fas fa-caret-left"></i></a></span>
+            </p>
+        </form>
+    </div>
+
+</section>
