@@ -32,6 +32,7 @@ export class SignUpComponent implements OnInit {
     //   "password": form.value.password,
     // };
     // console.log(this.userInfo)
+    //regis
     this.userservice.registerUser( form.value).subscribe(res=>  
       {          
         alert("Data added successfully !! ") ;
