@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { userservice } from '../services/userservice.service';
+import { User } from '../Model/user';
 
 
 @Component({
@@ -12,7 +14,7 @@ export class SignUpComponent implements OnInit {
   myForm: FormGroup;
   userInfo;
 
-  constructor(private fb: FormBuilder ,  private router: Router) { }
+  constructor(private fb: FormBuilder ,  private router: Router,private userservice:userservice) { }
 
   ngOnInit() {
     this.myForm = this.fb.group({
@@ -24,14 +26,22 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit(form: FormGroup) {
-    this.userInfo = {
-      "name": form.value.name,
-      "email": form.value.email,
-      "password": form.value.password,
-    }
-    console.log(this.userInfo)
-    this.router.navigate(["/"])
-
+    // this.userInfo =new User {
+    //   name= form.value.name;
+    //   ema: form.value.email,
+    //   "password": form.value.password,
+    // };
+    // console.log(this.userInfo)
+    //regis
+    this.userservice.registerUser( form.value).subscribe(res=>  
+      {          
+        alert("Data added successfully !! ") ;
+        this.router.navigate(['logIn']);    
+      })  
+      ,err=>  
+      {  
+        console.log("Error Occured " + err);  
+      }
     // console.log('Valid?', form.valid); // true or false
     // console.log('Name', form.value.name);
     // console.log('Email', form.value.email);
@@ -40,4 +50,5 @@ export class SignUpComponent implements OnInit {
 
   }
 
+ 
 }
